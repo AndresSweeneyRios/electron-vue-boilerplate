@@ -1,0 +1,50 @@
+{
+  "name": "electron-webpack-boilerplate",
+  "version": "0.1.0",
+  "description": "Boilerplate for a vanilla Webpack configuration with Electron.",
+  "main": "electron/index.js",
+  "repository": "https://github.com/Andr3wRiv3rs/electron-webpack-boilerplate",
+  "author": {
+    "name": "Andres Sweeney-Rios",
+    "email": "andrewarivers@gmail.com",
+    "url": "https://poisonapple.dev"
+  },
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "electron dist",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "build": "npm run build:webpack && npm run build:electron",
+    "lint": "eslint --fix",
+    "build:webpack": "cross-env NODE_ENV=production webpack --production",
+    "build:electron": "cross-env NODE_ENV=production node ./prebuild && electron-builder"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.2.1",
+    "electron": "^9.2.0",
+    "electron-builder": "^22.8.0",
+    "eslint": "^7.5.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "build": {
+    "npmRebuild": true,
+    "win": {
+      "icon": "assets/icon.png",
+      "target": [
+        "zip"
+      ]
+    },
+    "directories": {
+      "app": "dist",
+      "output": "build"
+    }
+  }
+}

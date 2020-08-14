@@ -12,6 +12,8 @@ module.exports = {
     ecmaVersion: 2020,
   },
 
+  parser: 'vue-eslint-parser',
+
   rules: {
     
   },

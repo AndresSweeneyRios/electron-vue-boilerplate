@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const { spawn } = require('child_process')
 const electron = require('electron')
 const { watch } = require('fs')
@@ -19,6 +20,8 @@ module.exports = () => ({
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),
+
+    new VueLoaderPlugin(),
 
     new CopyPlugin({
       patterns: [
@@ -78,6 +81,10 @@ module.exports = () => ({
           },
         ],
       },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+      },
     ],
   },
 
@@ -85,7 +92,7 @@ module.exports = () => ({
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
-    extensions: ['.js'],
+    extensions: ['.js', '.vue'],
   },
 
   output: {

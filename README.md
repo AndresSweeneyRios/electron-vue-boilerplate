@@ -1,10 +1,10 @@
-# electron-webpack-boilerplate
-Boilerplate for a vanilla Webpack configuration with Electron.
+# electron-vue-boilerplate
+Boilerplate for a Vue + Webpack configuration with Electron.
 
 ## Installation
 ```
-git clone https://github.com/Andr3wRiv3rs/electron-webpack-boilerplate
-cd electron-webpack-boilerplate
+git clone https://github.com/Andr3wRiv3rs/electron-vue-boilerplate
+cd electron-vue-boilerplate
 npm install
 ```
 
